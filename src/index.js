@@ -13,6 +13,18 @@ class FileDB {
     });
   }
 
+  /**
+   * Assign `value` to `key` and save to the file system. Can be a key-value pair,
+   * array of objects, or an object.
+   *
+   * @name .create
+   * @param {String} `key`
+   * @param {JSON} `value` . Must be a valid JSON type.
+   * @param {Number} `ttl`. Must be a number in seconds
+   * @return {Boolean} status
+   * @api public
+   */
+
   create(key, value, ttl) {
     return Promise.resolve().then(() => {
       return (Utils.isValidKey(key, this._options.maxKeyChars) && Utils.isValidJSON(value) && Utils.validateJSONSize(value, this._options.maxJSONSize) && Utils.verifyFileSize(this._path, this._options.maxFileStoreSize)) ? true : false;
@@ -34,6 +46,15 @@ class FileDB {
     })
   }
 
+  /**
+   * Provide `key` to retrive value
+   *
+   * @name .read
+   * @param {String} `key`
+   * @return {JSON}  `value`
+   * @api public
+   */
+
   read(key) {
     return Promise.resolve().then(() => {
       return Utils.jsonToMap(Utils.readFile(this._path));
@@ -48,6 +69,16 @@ class FileDB {
       throw err;
     })
   }
+
+
+  /**
+   * Provide `key` to delete value
+   *
+   * @name .read
+   * @param {String} `key`
+   * @return {Boolean}  `status`
+   * @api public
+   */
 
   delete(key) {
     return Promise.resolve().then(() => {
@@ -71,6 +102,10 @@ class FileDB {
       throw err;
     })
   }
+
+  /**
+   * @api private
+   */
 
   _pathFunction(path) {
     return (typeof path == 'undefined') ? Utils.defaultPath() : Utils.setPath(path);

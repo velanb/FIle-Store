@@ -57,7 +57,7 @@ class Utils {
 
     if ((typeof ttl == 'number')) {
       if (ttl > 0) {
-        expiryTime = (Date.now() + ttl);
+        expiryTime = (Date.now() + ttl * 1000);
         return {
           expiryTime,
           value
