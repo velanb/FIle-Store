@@ -36,9 +36,12 @@ Methods available - create(), read(), delete()
 ## create(key, valueInJSON, TTL)
  - This method take three parameters(The third one being optional);
 
-Key -> Should be a String of max 32 Chars
-Value -> Should be a JSON
-ttl -> Time To Live -> OPTIONAL - in seconds.
+# Key -> Should be a String of max 32 Chars
+
+# Value -> Should be a JSON
+
+# ttl -> Time To Live -> OPTIONAL - in seconds.
+
 After the TTL expires you cannot read or delete the entry.
 
 Example: (With TTL) 
