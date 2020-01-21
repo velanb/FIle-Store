@@ -1,10 +1,5 @@
-# Project Title
-
-File Based Data-Store
-
-## Getting Started
-
-This is a File based data store where you can add key value pairs which can be retrived later on demand. 
+# File Based Data-Store
+A File based data store where you can add key value pairs which can be retrived later on demand. 
 
 ### Initialization
 
