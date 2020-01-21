@@ -38,12 +38,9 @@ Example:
 
 Methods available - create(), read(), delete()
 
-## Create ->> 
+## create(key, valueInJSON, TTL)
  - This method take three parameters(The third one being optional);
 
-```
- create(key, valueInJSON, ttl);
- ```
 Key -> Should be a String of max 32 Chars
 Value -> Should be a JSON
 ttl -> Time To Live -> OPTIONAL - in seconds.
@@ -75,13 +72,43 @@ Example: (Without TTL)
     console.log(`Err->>`, err)
   }
 })();
+```
 
 
 
+## read(key); 
+Please give in a valid key to retrive data from the file store
 
+Example: 
+```
+(async () => {
+  try {
+    let fileDB = new FileDB();
+    await fileDB.read("thisKey");
+  } catch (err) {
+    console.log(`Err->>`, err)
+  }
+})();
+```
 
+## delete(key); 
+Please give in a valid key to retrive data from the file store
+
+Example: 
+```
+(async () => {
+  try {
+    let fileDB = new FileDB();
+    await fileDB.delete("thisKey");
+  } catch (err) {
+    console.log(`Err->>`, err)
+  }
+})();
+```
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
+You can run the test by using this command 
+```
+npm run test
+```
