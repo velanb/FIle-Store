@@ -1,5 +1,6 @@
 # File Based Data-Store
 A File based data store where you can add key value pairs which can be retrived later on demand. 
+The Default file locaction will be the current user's directory. 
 
 ### Initialization
 
